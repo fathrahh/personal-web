@@ -1,5 +1,4 @@
-import Button, { button } from "@/components/Button";
-import { Greeting, Quotes } from "./sections/Home/";
+import { Greeting, Quotes, Work } from "./sections/Home/";
 import Projects from "./sections/Home/Projects";
 
 export default function Home() {
@@ -8,6 +7,7 @@ export default function Home() {
       <Greeting />
       <div className="max-w-6xl flex flex-col mx-auto">
         <Quotes />
+        <Work />
         <Projects />
       </div>
     </main>

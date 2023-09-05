@@ -1,10 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Fira_Code as FiraCode } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { cn } from "@/utils/helper";
 import Navbar from "@/components/Navbar";
 
-const inter = FiraCode({ subsets: ["latin"] });
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className)}>
+      <body className={cn(outfit.className)}>
         <Navbar />
         <div className="mt-16">{children}</div>
       </body>

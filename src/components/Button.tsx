@@ -9,6 +9,7 @@ export const button = cva(
         primary: ["bg-custom-dark"],
         secondary: ["bg-custom-blue-accent"],
         orange: ["bg-custom-orange"],
+        light: ["bg-white", "text-black"],
       },
       size: {
         small: ["text-sm", "py-1", "px-2"],
