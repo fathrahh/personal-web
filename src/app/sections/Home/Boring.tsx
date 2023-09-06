@@ -1,21 +1,18 @@
 "use client";
 
 import Button from "@/components/Button";
-import UseMounted from "@/hooks/use-mounted";
-import React, { useEffect, useId, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Boring() {
-  const colorPickerId = useId();
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerCanvasRef = useRef<HTMLDivElement | null>(null);
   const [canvasScale, setCanvasScale] = useState({
     w: 300,
     h: 300,
   });
-
-  const isMounted = UseMounted();
   const [isPainting, setIsPainting] = useState(false);
-  // const [context, setContext] = useState<CanvasRenderingContext2D | null>(null);
+  const [radius, setRadius] = useState(1);
+  const [blur, setBlur] = useState(0);
 
   const [colorPicker, setColorPicker] = useState<string>("#000000");
 
@@ -48,14 +45,15 @@ export default function Boring() {
     const x = event.clientX - left,
       y = event.clientY - top;
 
-    context.lineWidth = 10;
+    context.shadowBlur = blur;
+    context.lineWidth = radius * 2;
     context.strokeStyle = colorPicker;
     context.fillStyle = colorPicker;
     context.shadowColor = colorPicker;
     context.lineTo(x, y);
     context.stroke();
     context.beginPath();
-    context.arc(x, y, 10, 0, Math.PI * 2);
+    context.arc(x, y, radius, 0, Math.PI * 2);
     context.fill();
     context.beginPath();
     context.moveTo(x, y);
@@ -74,13 +72,14 @@ export default function Boring() {
     const { width, height } =
       containerCanvasRef.current.getBoundingClientRect();
 
+    console.log(width, height);
+
     setCanvasScale({
       w: width,
       h: height,
     });
   }, []);
 
-  if (!isMounted) return;
   return (
     <section className="pb-16">
       <div className="text-center">
@@ -93,10 +92,10 @@ export default function Boring() {
         ref={containerCanvasRef}
         className="mt-6 w-full h-[600px] shadow-md rounded-lg relative"
       >
-        <div className="flex gap-4 absolute m-4">
+        <div className="flex w-full gap-4 absolute m-4">
           <label
             className="px-4 py-2 shadow bg-gray-100 font-semibold inline-flex items-center gap-3 cursor-pointer"
-            htmlFor={colorPickerId}
+            htmlFor={"color-picker"}
           >
             <span>Pick Your Color</span>
             <div
@@ -107,15 +106,38 @@ export default function Boring() {
             />
           </label>
           <input
-            id={colorPickerId}
+            id={"color-picker"}
             type="color"
             className="invisible absolute cursor-none"
             onChange={(e) => setColorPicker(e.target.value)}
             value={colorPicker}
           />
           <Button onClick={clearCanvas}>Clear</Button>
+          <div className="inline-flex gap-2 items-center">
+            <label htmlFor="radius">Radius</label>
+            <input
+              id="radius"
+              type="range"
+              min={1}
+              max={10}
+              value={radius}
+              onChange={(event) => setRadius(event.target.valueAsNumber)}
+            />
+          </div>
+          <div className="inline-flex gap-2 items-center">
+            <label htmlFor="blur">Blur</label>
+            <input
+              id="blur"
+              type="range"
+              min={1}
+              max={10}
+              value={blur}
+              onChange={(event) => setBlur(event.target.valueAsNumber)}
+            />
+          </div>
         </div>
         <canvas
+          className="cursor-default"
           width={canvasScale.w}
           height={canvasScale.h}
           onMouseDown={startPainting}
