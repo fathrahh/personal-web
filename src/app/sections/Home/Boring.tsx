@@ -6,10 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 export default function Boring() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerCanvasRef = useRef<HTMLDivElement | null>(null);
-  const [canvasScale, setCanvasScale] = useState({
-    w: 300,
-    h: 300,
-  });
+
   const [isPainting, setIsPainting] = useState(false);
   const [radius, setRadius] = useState(1);
   const [blur, setBlur] = useState(0);
@@ -66,18 +63,31 @@ export default function Boring() {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
   };
 
+  const downloadImage = () => {
+    if (!canvasRef.current) return;
+
+    const canvas = canvasRef.current;
+    let canvasUrl = canvas.toDataURL();
+
+    const createEl = document.createElement("a");
+    createEl.href = canvasUrl;
+
+    createEl.download = new Date().getTime() + "_Gambar_gabut.jpg";
+
+    createEl.click();
+    createEl.remove();
+  };
+
   useEffect(() => {
     if (!canvasRef.current || !containerCanvasRef.current) return;
     const ctx = canvasRef.current.getContext("2d") as CanvasRenderingContext2D;
     const { width, height } =
       containerCanvasRef.current.getBoundingClientRect();
 
-    console.log(width, height);
-
-    setCanvasScale({
-      w: width,
-      h: height,
-    });
+    ctx.canvas.width = width;
+    ctx.canvas.height = height;
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, width, height);
   }, []);
 
   return (
@@ -112,6 +122,9 @@ export default function Boring() {
             onChange={(e) => setColorPicker(e.target.value)}
             value={colorPicker}
           />
+          <Button onClick={downloadImage} variant={"secondary"}>
+            Save as Picture
+          </Button>
           <Button onClick={clearCanvas}>Clear</Button>
           <div className="inline-flex gap-2 items-center">
             <label htmlFor="radius">Radius</label>
@@ -137,9 +150,7 @@ export default function Boring() {
           </div>
         </div>
         <canvas
-          className="cursor-default"
-          width={canvasScale.w}
-          height={canvasScale.h}
+          className="cursor-default bg-white"
           onMouseDown={startPainting}
           onMouseLeave={stopPainting}
           onMouseUp={stopPainting}
