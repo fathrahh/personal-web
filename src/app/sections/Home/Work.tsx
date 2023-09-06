@@ -31,12 +31,7 @@ export default function Work() {
               <div className="w-2 h-2 rounded-full bg-green-500" />
             </div>
             <div className="p-2 ">
-              <Image
-                className="w-full"
-                objectFit="contain"
-                src={Dashboard}
-                alt="dashboard"
-              />
+              <Image className="w-full" src={Dashboard} alt="dashboard" />
             </div>
           </div>
         </div>
