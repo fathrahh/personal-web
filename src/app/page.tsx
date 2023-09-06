@@ -1,4 +1,5 @@
 import { Greeting, Quotes, Work } from "./sections/Home/";
+import Boring from "./sections/Home/Boring";
 import Projects from "./sections/Home/Projects";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <div className="max-w-6xl flex flex-col mx-auto">
         <Quotes />
         <Work />
+        <Boring />
         <Projects />
       </div>
     </main>

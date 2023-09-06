@@ -10,15 +10,10 @@ import { cn } from "@/utils/helper";
 export default function Work() {
   return (
     <section className="py-16">
-      <h2>Experiences</h2>
-      <div className="grid grid-cols-12 gap-3">
-        <div className="col-span-8 rounded-md shadow-md p-8 bg-[#EAEFF5]">
-          <Image
-            src={TelkomImg}
-            height={40}
-            className="mix-blend-color-burn"
-            alt="telkom-indonesia"
-          />
+      <h2 className="text-6xl text-center font-bold">Experiences 🍋</h2>
+      <div className="grid grid-cols-12 gap-3 mt-8">
+        <div className="col-span-8 rounded-md shadow-md p-8 pb-0 bg-[#EAEFF5] overflow-hidden group">
+          <Image src={TelkomImg} height={40} alt="telkom-indonesia" />
           <p className="text-5xl font-bold w-4/5 mt-8">
             Dashboard For Managing Your Data
           </p>
@@ -29,13 +24,13 @@ export default function Work() {
             Quos perferendis odio odit vero cumque dolor, iure, dignissimos,
             veniam rerum totam ullam! Aut !
           </p>
-          <div className="mt-6 p-2 rounded-md bg-white">
+          <div className="mt-6 p-2 rounded-md bg-white translate-y-16 group-hover:translate-y-0 transition-all">
             <div className="flex gap-1 ">
               <div className="w-2 h-2 rounded-full bg-red-500" />
               <div className="w-2 h-2 rounded-full bg-yellow-300" />
               <div className="w-2 h-2 rounded-full bg-green-500" />
             </div>
-            <div className="p-2">
+            <div className="p-2 ">
               <Image
                 className="w-full"
                 objectFit="contain"
@@ -46,7 +41,8 @@ export default function Work() {
           </div>
         </div>
         <div className="col-span-4 flex flex-col gap-3">
-          <div className="bg-[#00317A] rounded-md p-8 ">
+          <div className="bg-[#00317A] rounded-md p-8 relative">
+            <div className="absolute w-16 h-16 bg-gradient-radial from-#2a528d to-#173c73 top-0 lef-0 z-10" />
             <p className="text-5xl font-bold text-white">
               Working Closely with UI/UX
             </p>
@@ -65,7 +61,19 @@ export default function Work() {
             </p>
           </div>
         </div>
-        <div className="col-span-12 p-8 bg-black text-white rounded-md">
+        <div className="col-span-3 p-8 rounded-md bg-yellow-300  shadow-md">
+          <h3 className="text-3xl font-bold text-black">
+            No Limitation Any Framework
+          </h3>
+          <div className="flex gap-2 text-2xl mt-5">
+            <Iconify icon={"logos:typescript-icon"} />
+            <Iconify icon={"devicon:react"} />
+            <Iconify icon={"teenyicons:nextjs-outline"} />
+            <Iconify icon={"devicon:tailwindcss"} />
+            <Iconify icon={"logos:go"} />
+          </div>
+        </div>
+        <div className="col-span-9 p-8 bg-black text-white rounded-md relative z-20">
           <h3 className="text-4xl font-bold">Colaboration With Team ?</h3>
           <p className="mt-4 w-5/6">
             I&lsquo;m an experienced team player proficient in Atlassian, Git,
@@ -78,9 +86,14 @@ export default function Work() {
             target="_blank"
             className={cn("mt-6", button({ variant: "light" }))}
           >
-            <span>See Also My</span>
+            See Also My
             <Iconify className="ml-2" icon="bi:github" />
           </a>
+          <Iconify
+            className="ml-2 absolute -z-10 -translate-y-1/2 top-1/2 opacity-50"
+            fontSize={150}
+            icon="bi:github"
+          />
         </div>
       </div>
     </section>
