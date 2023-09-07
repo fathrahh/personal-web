@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import { cn } from "@/utils/helper";
 import Navbar from "@/components/Navbar";
+import Bottom from "@/components/Bottom";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -21,9 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(outfit.className)}>
+      <body className={cn(outfit.className, "overflow-x-hidden")}>
         <Navbar />
-        <div className="mt-16">{children}</div>
+        <div className="mt-4 md:mt-16 px-2 md:px-0 min-h-screen">
+          {children}
+        </div>
+        <Bottom />
       </body>
     </html>
   );

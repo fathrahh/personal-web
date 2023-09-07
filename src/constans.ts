@@ -10,11 +10,11 @@ export const Navlinks: Navlinks[] = [
     to: "/",
   },
   {
-    text: "Work",
-    to: "/project",
+    text: "Me",
+    to: "/me",
   },
   {
-    text: "Me",
-    to: "/about",
+    text: "Work",
+    to: "/work",
   },
 ];

@@ -2,6 +2,7 @@
 
 import Button from "@/components/Button";
 import React, { useEffect, useRef, useState } from "react";
+import PerfectScrollbar from "react-perfect-scrollbar";
 
 export default function Boring() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -93,61 +94,68 @@ export default function Boring() {
   return (
     <section className="pb-16">
       <div className="text-center">
-        <h2 className="text-6xl  font-bold">Are You Boring ?</h2>
+        <h2 className="text-4xl md:text-6xl font-bold">Are You Boring ?</h2>
         <h3 className="mt-2 text-lg font-semibold">
           Lets Relax your mind with drawing on our board 🍊
         </h3>
       </div>
       <div
         ref={containerCanvasRef}
-        className="mt-6 w-full h-[600px] shadow-md rounded-lg relative"
+        className="mt-6 w-full h-[600px] shadow-md rounded-lg relative overflow-hidden"
       >
-        <div className="flex w-full gap-4 absolute m-4">
-          <label
-            className="px-4 py-2 shadow bg-gray-100 font-semibold inline-flex items-center gap-3 cursor-pointer"
-            htmlFor={"color-picker"}
-          >
-            <span>Pick Your Color</span>
-            <div
-              className="w-3 h-3 rounded-full"
-              style={{
-                backgroundColor: colorPicker,
-              }}
-            />
-          </label>
-          <input
-            id={"color-picker"}
-            type="color"
-            className="invisible absolute cursor-none"
-            onChange={(e) => setColorPicker(e.target.value)}
-            value={colorPicker}
-          />
-          <Button onClick={downloadImage} variant={"secondary"}>
-            Save as Picture
-          </Button>
-          <Button onClick={clearCanvas}>Clear</Button>
-          <div className="inline-flex gap-2 items-center">
-            <label htmlFor="radius">Radius</label>
+        {/* Change this with beautifull scrollbar */}
+        <div className="w-full m-4 absolute px-4">
+          <PerfectScrollbar className="flex w-auto gap-4 pb-4">
+            <label
+              className="px-4 py-2 shadow bg-gray-100 font-semibold inline-flex flex-shrink-0 items-center gap-3 cursor-pointer"
+              htmlFor={"color-picker"}
+            >
+              <span>Pick Your Color</span>
+              <div
+                className="w-3 h-3 rounded-full"
+                style={{
+                  backgroundColor: colorPicker,
+                }}
+              />
+            </label>
             <input
-              id="radius"
-              type="range"
-              min={1}
-              max={10}
-              value={radius}
-              onChange={(event) => setRadius(event.target.valueAsNumber)}
+              id={"color-picker"}
+              type="color"
+              className="invisible absolute cursor-none"
+              onChange={(e) => setColorPicker(e.target.value)}
+              value={colorPicker}
             />
-          </div>
-          <div className="inline-flex gap-2 items-center">
-            <label htmlFor="blur">Blur</label>
-            <input
-              id="blur"
-              type="range"
-              min={1}
-              max={10}
-              value={blur}
-              onChange={(event) => setBlur(event.target.valueAsNumber)}
-            />
-          </div>
+            <Button
+              className="flex-shrink-[1_0_auto]"
+              onClick={downloadImage}
+              variant={"secondary"}
+            >
+              Save as Picture
+            </Button>
+            <Button onClick={clearCanvas}>Clear</Button>
+            <div className="inline-flex gap-2 items-center">
+              <label htmlFor="radius">Radius</label>
+              <input
+                id="radius"
+                type="range"
+                min={1}
+                max={10}
+                value={radius}
+                onChange={(event) => setRadius(event.target.valueAsNumber)}
+              />
+            </div>
+            <div className="inline-flex gap-2 items-center">
+              <label htmlFor="blur">Blur</label>
+              <input
+                id="blur"
+                type="range"
+                min={1}
+                max={10}
+                value={blur}
+                onChange={(event) => setBlur(event.target.valueAsNumber)}
+              />
+            </div>
+          </PerfectScrollbar>
         </div>
         <canvas
           className="cursor-default bg-white"

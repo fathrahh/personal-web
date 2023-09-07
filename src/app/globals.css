@@ -1,3 +1,4 @@
+@import 'react-perfect-scrollbar/dist/css/styles.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,13 +8,13 @@
         @apply relative
     }
     blockquote::before, blockquote::after{
-        @apply absolute text-8xl text-gray-800 
+        @apply absolute text-6xl  lg:text-8xl text-gray-800 
     }
     blockquote::before {
-        @apply content-["\201C"] -top-8 -left-20
+        @apply content-["\201C"] -top-8 -left-0 sm:-left-10 lg:-left-20
     }
     blockquote::after {
-        @apply content-["\201D"] -bottom-20 -right-20
+        @apply content-["\201D"] -bottom-16 right-0 sm:-bottom-20 md:-right-20
     }
 
     cite {

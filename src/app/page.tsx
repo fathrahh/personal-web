@@ -1,6 +1,4 @@
-import { Greeting, Quotes, Work } from "./sections/Home/";
-import Boring from "./sections/Home/Boring";
-import Projects from "./sections/Home/Projects";
+import { Boring, Projects, Greeting, Quotes, Work } from "./sections/Home/";
 
 export default function Home() {
   return (
@@ -10,7 +8,7 @@ export default function Home() {
         <Quotes />
         <Work />
         <Boring />
-        <Projects />
+        {/* <Projects /> */}
       </div>
     </main>
   );
