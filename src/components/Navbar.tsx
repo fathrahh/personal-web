@@ -10,8 +10,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="pt-8 flex justify-center items-center">
-      <ul className="inline-flex gap-7 p-2 rounded-md">
+    <nav className="h-16 flex justify-center items-center">
+      <ul className="inline-flex gap-7 rounded-md">
         {Navlinks.map((link) => (
           <Link key={link.to} href={link.to} passHref>
             <li className="font-semibold text-lg relative">
@@ -21,7 +21,6 @@ export default function Navbar() {
                   className="absolute -bottom-1 rounded-full left-0 bg-black w-full h-1"
                 />
               )}
-
               {link.text}
             </li>
           </Link>

@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Android-TV Ads Application",
+        "project_date": "Dec 2023",
+        "project_type": "One Time Project",
+        "description": "",
+        "technology": [
+            "Dart",
+            "Flutter",
+            "Typescript",
+            "TailwindCSS",
+            "ReactJs"
+        ],
+        "based": [
+            "Web Application",
+            "Android TV Application"
+        ]
+    },
+    {
+        "name": "Bot Update Stock",
+        "project_date": "Dec 2021",
+        "project_type": "Repeated Order (2 Times)",
+        "description": "",
+        "technology": [
+            "Go",
+            "Web Scrapping",
+            "Typescript",
+            "TailwindCSS",
+            "ReactJs",
+            "React-hook-form",
+            "Yup",
+            "RestAPI"
+        ],
+        "based": [
+            "Web Application"
+        ]
+    },
+    {
+        "name": "Pembuatan Game Tiktok Live Berbasis Web",
+        "project_date": "Dec 2021",
+        "project_type": "One Time Project",
+        "description": "",
+        "technology": [
+            "HTML",
+            "CSS",
+            "Javascript",
+            "Websocket",
+            "Socket.io",
+            "NodeJs",
+            "Canvas (P5.js)"
+        ],
+        "based": [
+            "Web Application"
+        ]
+    }
+]

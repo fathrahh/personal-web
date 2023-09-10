@@ -1,0 +1,26 @@
+[
+    {
+        "from": "June 2022",
+        "to": "Dec 2022",
+        "company": "Telkom Indonesia",
+        "position": "Developer Intern",
+        "status": false,
+        "description": "lorem loreemm loremmm",
+        "technology": [
+            "Javascript",
+            "Typescript",
+            "React",
+            "MaterialUI",
+            "GraphQL",
+            "Urql",
+            "Hasura",
+            "SendGrid",
+            "NodeJs",
+            "ExpressJs",
+            "Cloud Function",
+            "Cloud Scheduler",
+            "Google BigQuery",
+            "Python"
+        ]
+    }
+]

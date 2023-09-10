@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Movie App",
+        "description": "This study cases i doing for learn slicing figma into widget in Flutter and component in React Native. I learn so much things, such as implementation routing, API fetch on Flutter and React Native, layouting",
+        "technology": [
+            "React Native",
+            "Flutter"
+        ],
+        "sources": [
+            "https://github.com/fathrahh/movies-flutter",
+            "https://github.com/fathrahh/react-native-movies"
+        ]
+    },
+    {
+        "name": "Pokemon App",
+        "description": "This app i build for my internship test at some company. I build this application using NextJs 13.0 Server Component (App dir), TailwindCSS, and so much more.",
+        "technology": [
+            "Typescript",
+            "Nextjs",
+            "TailwindCSS"
+        ],
+        "sources": [
+            "https://github.com/fathrahh/gravel_pokemon"
+        ]
+    }
+]

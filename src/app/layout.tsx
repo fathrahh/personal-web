@@ -1,9 +1,10 @@
-import "./globals.css";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+
 import { cn } from "@/utils/helper";
 import Navbar from "@/components/Navbar";
-import Bottom from "@/components/Bottom";
+import Footer from "@/components/Footer";
+import "./globals.css";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -24,10 +25,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(outfit.className, "overflow-x-hidden")}>
         <Navbar />
-        <div className="mt-4 md:mt-16 px-2 md:px-0 min-h-screen">
+        <div className="pt-4 md:pt-16 px-2 md:px-0 h-screenWithoutNav">
           {children}
         </div>
-        <Bottom />
+        {/* <Footer /> */}
       </body>
     </html>
   );
