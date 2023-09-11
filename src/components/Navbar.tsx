@@ -4,13 +4,18 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { AUTHOR, Navlinks } from "@/constans";
+import { Navlinks } from "@/constans";
+import { cn } from "@/utils/helper";
 
 export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="h-16 flex justify-center items-center">
+    <nav
+      className={cn("h-16 flex justify-center items-center bg-white z-20", {
+        "lg:fixed lg:left-0 lg:top-0 w-full": pathname === "/me",
+      })}
+    >
       <ul className="inline-flex gap-7 rounded-md">
         {Navlinks.map((link) => (
           <Link key={link.to} href={link.to} passHref>

@@ -3,7 +3,7 @@
         "name": "Android-TV Ads Application",
         "project_date": "Dec 2023",
         "project_type": "One Time Project",
-        "description": "",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?",
         "technology": [
             "Dart",
             "Flutter",
@@ -14,13 +14,14 @@
         "based": [
             "Web Application",
             "Android TV Application"
-        ]
+        ],
+        "image": "/android-tv.png"
     },
     {
         "name": "Bot Update Stock",
         "project_date": "Dec 2021",
         "project_type": "Repeated Order (2 Times)",
-        "description": "",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?",
         "technology": [
             "Go",
             "Web Scrapping",
@@ -33,13 +34,14 @@
         ],
         "based": [
             "Web Application"
-        ]
+        ],
+        "image": "/android-tv.png"
     },
     {
         "name": "Pembuatan Game Tiktok Live Berbasis Web",
         "project_date": "Dec 2021",
         "project_type": "One Time Project",
-        "description": "",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?",
         "technology": [
             "HTML",
             "CSS",
@@ -51,6 +53,7 @@
         ],
         "based": [
             "Web Application"
-        ]
+        ],
+        "image": "/android-tv.png"
     }
 ]
