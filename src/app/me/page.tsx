@@ -97,14 +97,6 @@ export default function Page() {
                   className="transition-all hover:bg-slate-50 hover:outline-[2px] px-6 py-4 hover:outline-slate-100 flex items-start gap-3 mb-4 rounded-md"
                   key={cases.name}
                 >
-                  <div className="relative aspect-video w-28 bg-black overflow-hidden">
-                    <Image
-                      src={cases.image}
-                      fill
-                      alt={cases.name}
-                      objectFit="fill"
-                    />
-                  </div>
                   <div className="flex-1">
                     <h4 className="text-lg font-semibold leading-none">
                       {cases.name}
