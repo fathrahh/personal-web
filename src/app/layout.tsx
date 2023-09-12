@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html className="scroll-smooth" lang="en">
       <body className={cn(outfit.className, "overflow-x-hidden")}>
         <Navbar />
         <div className="px-2 md:px-0">{children}</div>
