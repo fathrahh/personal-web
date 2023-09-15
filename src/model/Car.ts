@@ -38,7 +38,6 @@ export class Car extends CanvasBase {
   }
 
   public show = () => {
-    this.c.strokeStyle = "rgb(255,0,0)";
     this.c.drawImage(
       this.variant,
       this.position.x,
@@ -46,7 +45,9 @@ export class Car extends CanvasBase {
       this.carSize.width,
       this.carSize.height
     );
-    this.c.fillText(
+
+    this.c.strokeStyle = "white";
+    this.c.strokeText(
       this.currentPoint.toString(),
       this.position.x,
       this.position.y

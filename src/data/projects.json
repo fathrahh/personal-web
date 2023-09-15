@@ -1,9 +1,14 @@
 [
     {
+        "id": "android-tv",
         "name": "Android-TV Ads Application",
         "project_date": "Dec 2023",
         "project_type": "One Time Project",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?",
+        "description": {
+            "short": "On this project i build ads application for pharmacy. This application was developed by ReactJs, Typescript, and TailwindCSS for Web based, and flutter for android tv based.",
+            "full": "On this project i build ads application for pharmacy. This application was developed by ReactJs, Typescript, and TailwindCSS for Web based, and flutter for android tv based.",
+            "subtitle": "On this project i build ads application for pharmacy. This application was developed by ReactJs, Typescript, and TailwindCSS for Web based, and flutter for android tv based."
+        },
         "technology": [
             "Dart",
             "Flutter",
@@ -18,10 +23,15 @@
         "image": "/android-tv.png"
     },
     {
+        "id": "bot-update-stock",
         "name": "Bot Update Stock",
         "project_date": "Dec 2021",
         "project_type": "Repeated Order (2 Times)",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?",
+        "description": {
+            "short": "This project was developed for semi-automated update stock for several partner marketplace. This application was developed utilizing ReactJS, Typescript, and TailwindCSS for Frontend, and Go for backend system.",
+            "full": "On this project i build ads application for pharmacy. This application was developed by ReactJs, Typescript, and TailwindCSS for Web based, and flutter for android tv based.",
+            "subtitle": "Aplikasi ini terdiri dari dua game yaitu <span class='text-orange-400 font-bold'>Racing Car</span> dan <span class='text-indigo-500 font-bold'>Guesing Game </span> game ini cukup sederhana. Pemain hanya perlu melakukan komentar di live tiktok dengan suatu keyword untuk menggerakan mobil, atau menjawab pertanyaan pada Guessing game. Berikut demo gamenya"
+        },
         "technology": [
             "Go",
             "Web Scrapping",
@@ -35,13 +45,18 @@
         "based": [
             "Web Application"
         ],
-        "image": "/android-tv.png"
+        "image": "/bot-apotek.jpg"
     },
     {
+        "id": "tiktok-game",
         "name": "Pembuatan Game Tiktok Live Berbasis Web",
         "project_date": "Dec 2021",
         "project_type": "One Time Project",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quisarchitecto aperiam?",
+        "description": {
+            "short": "Aplikasi ini terdiri dari dua game yaitu Racing Car dan Guesing Game. Game ini cukup sederhana. Pemain hanya perlu melakukan komentar di live tiktok dengan suatu keyword untuk menggerakan mobil, atau menjawab pertanyaan pada Guessing game.",
+            "full": "Aplikasi ini dibentuk untuk memenuhi keinginan client membuat game yang terintegrasi dengan livestream pada tiktok. Pembuatan game tersebut menggunakan HTML, CSS, Javascript untuk sisi clien. Sedangkan untuk sisi server hanya memperlukan <span className='text-green-700 font-bold'>NodeJS </span>dan Socket.IO sebagai proxy antara client dengan tiktok livestream <br /><br /> Kenapa perlu menggunakan backend dan websocket? Hal ini dikarenakan aplikasi ini disupport dengan package Tiktok Livestream Connector.Dimana package tersebut mengambil data dengan file proto. Mengapa websocket? (sebenarnya untuk case ini Server Side Event sudah cukup,namun pada saat itu saya belum tau tentang SSE 😁) websocket disini untuk mengirim data chat dan gift yang diberikan oleh penonton livestream kepada sisi client (Browser).<br /><br />Setelah data chat dan gift diterima selanjutnya pada sisi browser akan mengolah data tersebut. Jika ada kesamaan dengan keyword pada clientmaka akan jadi bahan bakar mobil untuk bergerak.<br /><br />Setelah project selesai dikerjakan client cukup puas dengan hasilnya hal ini dibuktikan dengan rating project diberikan sebesar 9/10.",
+            "subtitle": "Aplikasi ini terdiri dari dua game yaitu <span class='text-orange-400 font-bold'>Racing Car</span> dan <span class='text-indigo-500 font-bold'>Guesing Game </span> game ini cukup sederhana. Pemain hanya perlu melakukan komentar di live tiktok dengan suatu keyword untuk menggerakan mobil, atau menjawab pertanyaan pada Guessing game. Berikut demo gamenya"
+        },
         "technology": [
             "HTML",
             "CSS",
@@ -54,6 +69,6 @@
         "based": [
             "Web Application"
         ],
-        "image": "/android-tv.png"
+        "image": "/racing-car.png"
     }
 ]

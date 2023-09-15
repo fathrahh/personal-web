@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from "react";
 import { cn } from "@/utils/helper";
 import experience from "@/data/experience.json";
+import Chip from "./Chip";
 
 interface Props {
   isActive: boolean;
@@ -45,12 +46,7 @@ export default function ExperienceList({
           <p>{experience.description}</p>
           <div className="flex flex-wrap gap-2 mt-4">
             {experience.technology.map((tech) => (
-              <span
-                className="px-4 bg-rose-50 text-rose-400 border-[1px] border-rose-100 font-semibold rounded-full text-sm"
-                key={tech}
-              >
-                {tech}
-              </span>
+              <Chip key={tech}>{tech}</Chip>
             ))}
           </div>
         </>

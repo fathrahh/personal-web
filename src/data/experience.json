@@ -5,7 +5,7 @@
         "company": "Telkom Indonesia",
         "position": "Developer Intern",
         "status": false,
-        "description": "lorem loreemm loremmm",
+        "description": "As a developer i have task to developing dashboard app using ReactJS, Typescript, and Graphql. For backend we utilizing Hasura for GraphQL Engine. My second task is creating data pipeline utilizing python for collect metrics from datadog. This application powered by Google Cloud Function and Google Cloud Scheduler for Scheduling some task. I also optimizing query database using indexing on big query",
         "technology": [
             "Javascript",
             "Typescript",

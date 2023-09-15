@@ -13,8 +13,8 @@ export const Navlinks: Navlinks[] = [
     text: "Me",
     to: "/me",
   },
-  {
-    text: "Work",
-    to: "/work",
-  },
+  // {
+  //   text: "Work",
+  //   to: "/work",
+  // },
 ];

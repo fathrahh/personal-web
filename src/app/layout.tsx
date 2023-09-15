@@ -23,7 +23,7 @@ export default function RootLayout({
     <html className="scroll-smooth" lang="en">
       <body className={cn(outfit.className, "overflow-x-hidden")}>
         <Navbar />
-        <div className="px-2 md:px-0">{children}</div>
+        <div className="px-6 md:px-0">{children}</div>
         {/* <Footer /> */}
       </body>
     </html>

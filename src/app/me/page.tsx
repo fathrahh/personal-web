@@ -1,9 +1,11 @@
+import { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import ExperienceList from "@/components/ExperienceList";
 import experiences from "@/data/experience.json";
 import projects from "@/data/projects.json";
 import studyCase from "@/data/study-cases.json";
-import { Metadata } from "next";
-import Image from "next/image";
+import Iconify from "@/components/Iconify";
 
 export const metadata: Metadata = {
   title: "Muhammad Fathurrahman",
@@ -14,9 +16,9 @@ export default function Page() {
   const hasWork = experiences.some((experience) => !experience.status);
 
   return (
-    <main className="w-full px-6 lg:py-0">
+    <main className="w-full pb-12 lg:py-0">
       <div className="lg:flex lg:gap-6 px mx-auto max-w-screen-xl ">
-        <div className="flex-1 pt-4 md:pt-24 lg:h-screen lg:sticky lg:top-0">
+        <div className="flex-1 pt-4 md:pt-24 lg:h-screen lg:sticky lg:top-0 flex flex-col">
           <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
             Muhammad Fathurrahman
           </h2>
@@ -38,6 +40,22 @@ export default function Page() {
             obcaecati laborum voluptatibus quia rerum eaque perspiciatis tenetur
             harum?
           </p>
+          <div className="mt-auto flex gap-2 pb-6 text-2xl">
+            <a
+              href="https://www.linkedin.com/in/muhammad-fathurrahmann/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Iconify icon="devicon:linkedin" />
+            </a>
+            <a
+              href="https://github.com/fathrahh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Iconify icon="mdi:github" />
+            </a>
+          </div>
         </div>
 
         <div className="flex-1 pt-4 md:pt-24 mt-12 lg:mt-0 selection:bg-pink-400 selection:text-white">
@@ -47,7 +65,11 @@ export default function Page() {
               {hasWork && (
                 <ExperienceList isActive>
                   <h4 className="text-lg font-semibold">What Next?</h4>
-                  <p>Please hire me right now 😢</p>
+                  <p>
+                    Currently i just doing freelance, but i really interested
+                    for getting job
+                  </p>
+                  {/* <p>Please hire me right now 😢</p> */}
                 </ExperienceList>
               )}
               {experiences.map((experience, idx) => (
@@ -64,33 +86,27 @@ export default function Page() {
             <h3 className="px-6 text-xl font-bold">Projects</h3>
             <ul className="mt-6">
               {projects.map((project) => (
-                <li
-                  className="transition-all hover:bg-slate-50 hover:outline-[2px] px-6 py-4 hover:outline-slate-100 flex flex-col lg:flex-row items-start gap-3 mb-4 rounded-md"
-                  key={project.name}
-                >
-                  <div className="relative aspect-video w-full lg:w-28 order-2 lg:order-1 bg-black overflow-hidden">
-                    <Image
-                      src={project.image}
-                      fill
-                      alt={project.name}
-                      objectFit="fill"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-lg font-semibold leading-none">
-                      {project.name}
-                    </h4>
-                    <span>{project.project_type}</span>
-                    <p className="text-slate-600 font-extralight mt-2">
-                      {project.description}
-                    </p>
-                  </div>
-                </li>
+                <Link key={project.id} href={`/projects/${project.id}`}>
+                  <li className="transition-all hover:bg-slate-50 hover:outline-[2px] px-6 py-4 hover:outline-slate-100 flex flex-col lg:flex-row items-start gap-3 mb-4 rounded-md cursor-pointer">
+                    <div className="relative aspect-video w-full lg:w-28 order-2 lg:order-1 bg-black overflow-hidden">
+                      <Image src={project.image} alt={project.name} fill />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold leading-none">
+                        {project.name}
+                      </h4>
+                      <span>{project.project_type}</span>
+                      <p className="text-slate-600 font-extralight mt-2">
+                        {project.description.short}
+                      </p>
+                    </div>
+                  </li>
+                </Link>
               ))}
             </ul>
           </section>
           <section className="mt-4 lg:mt-12">
-            <h3 className="px-6 text-xl font-bold">Projects</h3>
+            <h3 className="px-6 text-xl font-bold">Study Case</h3>
             <ul className="mt-6">
               {studyCase.map((cases) => (
                 <li
